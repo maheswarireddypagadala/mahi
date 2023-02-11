@@ -1,0 +1,15 @@
+package browserautomation;
+
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class msedge {
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.msedge.driver","./browserdrivefiles/msedgedriver.exe");
+        EdgeDriver hello=new EdgeDriver();
+		    hello.get("http://youtube.com");
+	        hello.get("http://facebook.com");
+	        
+	}
+
+}

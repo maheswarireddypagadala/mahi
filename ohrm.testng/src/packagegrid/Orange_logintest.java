@@ -1,0 +1,64 @@
+package packagegrid;
+
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class Orange_logintest  {
+	
+   @Parameters("browser")
+   @Test
+   public void logintest(String browserName) throws MalformedURLException {
+   System.out.println(" the browser name "+browserName);
+	   
+	   
+	   //DesiredCapabilities -is a class used to set the information of the browser and theb platform (os) which 
+// should be consider for the text run -Node info in set
+	   DesiredCapabilities capable=null;
+	   
+	   if(browserName.equals("chrome"))
+	   {
+		   //node 
+		  capable=DesiredCapabilities.chrome();
+		  capable.setBrowserName("chrome");
+		  capable.setPlatform(Platform.WINDOWS);
+		  
+		 }
+	   else {
+		   if(browserName.equals("Edge"))
+		   {
+			   capable=DesiredCapabilities.firefox();
+				  capable.setBrowserName("Edge");
+				  capable.setPlatform(Platform.WINDOWS);
+		   }
+	   
+
+//Remotedriver is used to set the connection between the hub and node"s
+		RemoteWebDriver driver=new RemoteWebDriver (new URL("http://192.168.43.123:4444/wd/hub"),capable);
+	       
+		String applicationurladdress="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/auth";
+
+        driver.get(applicationurladdress);
+        driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		
+      //testing the login functionality of orange HRM application
+        driver.findElement(By.id("txtUsername")).sendKeys("maheswari");
+        driver.findElement(By.id("txtPassword")).sendKeys("Mahesh@1998");
+        driver.findElement(By.className("button")).click();
+        //driver.close();
+	  }
+	   }
+	   
+   }
+
+

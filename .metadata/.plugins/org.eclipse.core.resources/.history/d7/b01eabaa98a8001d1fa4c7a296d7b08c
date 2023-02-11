@@ -1,0 +1,17 @@
+package com.utility;
+
+public class Screenshots {
+
+	public static void takescreenshot(WebDriver driver,String imageName) throws IOException
+
+	{
+
+	TakesScreenshot takesscreenshot=(TakesScreenshot)driver;
+
+	File errorscreenshot=takesscreenshot.getScreenshotAs(OutputType.FILE);
+
+	FileUtils.copyFile(errorscreenshot,new File("./orangeHrmApplicationerrorscreeshots/"+imageName+".png"));
+
+	}
+	
+}

@@ -1,0 +1,20 @@
+package array;
+
+public class Objectarray {
+
+	public static void main(String[] args) {
+		
+		//Object mahi[]=new Object[3];
+		
+		//Object mahi[][]=new Object[2][2];
+		Object mahi[]=new Object[3];
+		mahi[0]="10";
+		mahi[1]="mahi";
+		mahi[2]="10.3456";
+		for(int i=0;i<=2;i++) {
+			System.out.println(mahi[i]);
+		}
+		
+	}
+
+}

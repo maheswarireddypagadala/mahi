@@ -1,0 +1,34 @@
+package empaddphotograph;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.orangehrm.Basetest;
+
+public class EmpPim extends Basetest {
+     WebDriver driver;
+     
+      @Test(priority=1)
+	public void logintest(){
+    	
+    	  //id="txtUsername"
+	  By usernamelocator=By.id("txtUsername");
+	 WebElement username=driver.findElement(usernamelocator);
+	   username.sendKeys("maheswari");
+	   //id="txtPassword"
+	   By passwordlocator=By.id("txtPassword");
+		 WebElement password=driver.findElement(usernamelocator);
+		   username.sendKeys("Mahesh@1998");
+		   //name="Submit"name="Submit"
+		  By loginbuttonlocator=By.className("button");
+		   WebElement login=driver.findElement(loginbuttonlocator);
+		   login.click();
+			
+		
+	}
+
+}
+

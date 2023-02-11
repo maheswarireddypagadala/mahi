@@ -1,0 +1,32 @@
+package browserautomation;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class browsertesting {
+
+	public static void main(String[] args) {
+		
+		
+		//automatic chrome browser
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\myfirstprgm\\browserdrivefiles\\chromedriver.exe");
+        ChromeDriver hello=new ChromeDriver();
+		    hello.get("http://youtube.com");
+	        hello.get("http://facebook.com");
+	        hello.close();
+	        hello.quit();
+	    
+	   
+	    
+	      //hello.navigate().to("http://bing.com");
+	     //hello.quit();
+	      //hello.close();
+	    
+	    
+	    
+	    //ChromeDriver mahi=new ChromeDriver();
+	    //mahi.get("http://email.com");
+	    //mahi.get("http://instagram.com");
+	   // mahi.navigate().to("http://google.com");
+	        //C:\Users\ramre\OneDrive\Desktop\myproject12\myfirstprgm\browserdrivefiles\chromedriver.ex
+   }
+}

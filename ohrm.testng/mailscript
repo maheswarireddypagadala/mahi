@@ -1,0 +1,202 @@
+package com.OrangeHRMApplicationBaseTest;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+
+import com.Utility.Log;
+
+public class BaseTest {
+
+public static WebDriver driver;
+    // OrangeHRM Application Url Address
+String applicationUrlAddress="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/dashboard";
+
+@BeforeMethod
+public void setUp()
+{
+System.setProperty("webdriver.chrome.driver", "./BrowserDriverFiles/chromedriver.exe");
+driver = new ChromeDriver();
+
+// System.out.println(" Chorme Browser Launched Successfully ");
+Log.info(" Chorme Browser Launched Successfully ");
+
+driver.manage().deleteAllCookies();
+
+driver.get(applicationUrlAddress);
+//System.out.println(" Successfully Naviagated to OrangeHRM Application ");
+Log.info(" Successfully Naviagated to OrangeHRM Application ");
+
+driver.manage().window().maximize();
+
+// WebPage Load Time should be set
+driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+
+// waits for All the elements to be identified with the given property on the WebPage
+driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
+}
+
+
+@AfterMethod
+public void tearDown()
+{
+driver.quit();
+
+//System.out.println(" OrangeHRM Application Closed successfully ");
+Log.info(" OrangeHRM Application Closed successfully ");
+}
+
+
+}
+
+----------------------------------------
+package com.Utility;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
+public class Log {
+
+
+public static Logger log = Logger.getLogger("Log");
+
+public static void info(String message)
+{
+PropertyConfigurator.configure("Log4j.properties");
+log.info(message);
+}
+
+
+}
+
+------------------------------------------------------------------
+
+package com.OrangeHRMApplicationPages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.OrangeHRMApplicationBaseTest.BaseTest;
+import com.Utility.Log;
+
+public class OrangeHRMLogInPage extends BaseTest {
+
+public OrangeHRMLogInPage() // its a constructor
+{
+PageFactory.initElements(driver, this);
+}
+
+// Should be written with Identification of Elements of the Webpage
+// Should be written with Business Logics(User Defined methods) - to perform operation
+// on the Elements
+
+// Object Repository Class
+
+// WebElement orangeHRMLogo=driver.findElementBy(xpath="//*[@id=\"divLogo\"]/img");
+
+ @FindBy(xpath="//*[@id=\"divLogo\"]/img")
+ WebElement orangeHRMLogo;
+
+ @FindBy(id="logInPanelHeading")
+ WebElement orangeHRMLogInPageText;
+ 
+ @FindBy(id="txtUsername")
+ WebElement userName;
+ 
+ @FindBy(name="txtPassword")
+ WebElement password;
+ 
+ @FindBy(className = "button")
+ WebElement logInButton;
+
+ 
+ public void logInPageLogoValidation()
+ {
+ boolean flag=orangeHRMLogo.isDisplayed();
+ 
+ if(flag)
+ {
+ Log.info("OrangeHRM Application logo found on OrangeHRM Application LogIn Page - PASS ");
+ }
+ else
+ {
+ Log.info("OrangeHRM Application logo NOT found on OrangeHRM Application LogIn Page - FAIL ");
+ }
+ 
+ }
+ 
+ public void logInPageTextValidation()
+ {
+ 
+ String expected_OrangeHRLApplicationLogInPageText="LOGIN Panel";
+ Log.info("The expected LogIN Page Text is :- "+expected_OrangeHRLApplicationLogInPageText);
+ 
+ String actual_OrangeHRLApplicationLogInPageText=orangeHRMLogInPageText.getText();
+ Log.info("The actual LogIn Page Text is :- "+actual_OrangeHRLApplicationLogInPageText);
+ 
+ if(actual_OrangeHRLApplicationLogInPageText.equals(expected_OrangeHRLApplicationLogInPageText))
+ {
+ Log.info("Successfully navigated to OrangeHRM Application LogIN page - PASS");
+ }
+ else
+ {
+ Log.info("Failed to navigat to OrangeHRM Application LogIn Page - FAIL");
+ }
+   
+ 
+ }
+ 
+ 
+ public void logInPageLogInFuncationality(String userNameTestData, String passwordTestData)
+ {
+ userName.sendKeys(userNameTestData);
+ password.sendKeys(passwordTestData);
+ logInButton.click();
+ 
+ }
+
+
+}
+
+------------------------------------------------------------------------
+
+package com.OrangeHRMApplicationPageTestCases;
+
+import org.testng.annotations.Test;
+
+import com.OrangeHRMApplicationBaseTest.BaseTest;
+import com.OrangeHRMApplicationPages.OrangeHRMLogInPage;
+
+public class OrangeHRMLogInPageTest extends BaseTest{
+
+OrangeHRMLogInPage lip;
+
+@Test(priority=1,description=" validating OrangeHRM Application LogIN Page Logo Test ")
+public void logInPageLogoValidationTest()
+{
+lip= new OrangeHRMLogInPage();
+lip.logInPageLogoValidation();
+}
+
+@Test(priority=2,description=" validating OrangeHRM Application LogIN Page Text Test ")
+public void logInPageTextValidationTest()
+{
+lip= new OrangeHRMLogInPage();
+lip.logInPageTextValidation();
+}
+
+@Test(priority=3,description=" validating OrangeHRM Application LogIN Page LogIn Funcationality Test ")
+public void logInPageLogInFuncationalityTest()
+{
+lip= new OrangeHRMLogInPage();
+lip.logInPageLogInFuncationality("srini", "Q@Trainer7");
+}
+
+}

@@ -1,0 +1,95 @@
+package browserautomation;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class getTextAttributeLinksGoogle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 WebDriver driver;
+		  String applicationUrladdress="http://Google.com";
+		  System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\myfirstprgm\\browserdrivefiles\\chromedriver.exe");
+		  driver=new ChromeDriver();
+		  driver.get(applicationUrladdress);
+		  
+		  String expected_googlehomepagetitle="Google";
+		  System.out.println("expected_googlehomepagetitle :" + expected_googlehomepagetitle);
+		  
+		  //String expected_googlehomepagecurrenturladdress="Google.com";
+		  //System.out.println("expected_googlehomepagetitle :" + expected_googlehomepagecurrenturladdress);
+		  
+		  String actual_googlehomepagetitle=driver.getTitle();
+		  System.out.println("actual_googlehomepagetitle"+ actual_googlehomepagetitle);
+		  
+		  //String actual_googlehomepagecurrenturladdress=driver.getCurrentUrl();
+		  //System.out.println("actual_googlehomepagecurrenturladdress:" +actual_googlehomepagecurrenturladdress);
+		  
+		  //Validate
+		  if(actual_googlehomepagetitle.equals(expected_googlehomepagetitle)) {
+			  System.out.println(" googlehomepagetitle same");
+			  
+		  }
+		  else {
+			  System.out.println(" googlehomepagetitle not same");
+		  }
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+
+
+		  String expected_googlehomepagecurrenturladdress="google.com";
+		  System.out.println("expected_googlehomepagetitle :" + expected_googlehomepagecurrenturladdress);
+		  
+		  String actual_googlehomepagecurrenturladdress=driver.getCurrentUrl();
+		  System.out.println("actual_googlehomepagecurrenturladdress:" +actual_googlehomepagecurrenturladdress);
+		  
+
+		   if(actual_googlehomepagecurrenturladdress.contains(expected_googlehomepagecurrenturladdress)) {
+			  
+			  System.out.println("googlehomepagecurrenturladdress same -pass");
+		  }
+		  else
+		   {
+			  System.out.println("googlehomepagecurrenturladdress not same -fail");
+		    }
+		   
+		// a class="gb_7 gb_8 gb_de gb_dd" href="https://accounts.google.com/ServiceLogin?hl=en&amp;passive=true&amp;"
+		   		//+ "  continue=https://www.google.com/%3Fgws_rd%3Dssl&amp;ec=GAZAmgQ"
+				 //  target="_top">Sign in</a>
+				          
+		 By signinl=By.linkText("Sign in");
+		 WebElement signin=driver.findElement(signinl);
+		 String signintext=signin.getText();
+		 System.out.println("signintext :" + signintext);
+		
+		String signinattri=signin.getAttribute("class");
+		System.out.println("signinattri :" + signinattri);
+		String signihref=signin.getAttribute("href");
+		System.out.println("signihref:" + signihref);
+		
+		By linktagl=By.tagName("a");
+		List <WebElement>homepagelinks=driver.findElements(linktagl);
+		int googlehomepagecount=homepagelinks.size();
+		System.out.println("googlehomepagecount : "+ googlehomepagecount);
+		
+		 for(int index=0;index<=homepagelinks.size();index++)
+		 {
+		    String linknames=homepagelinks.get(index).getText();
+			System.out.println(index + " " +linknames);
+		}
+	    
+		
+		
+		 signin.click();
+		 By emailL=By.name("identifier");
+		 WebElement mail=driver.findElement(emailL);
+		 //mail.sendKeys("9187565643");
+		 mail.sendKeys("pagadalamaheswari117@gmail.com");
+		 
+	}
+
+}
+

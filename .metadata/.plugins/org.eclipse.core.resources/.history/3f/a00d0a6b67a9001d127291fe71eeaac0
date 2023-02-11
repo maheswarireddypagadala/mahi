@@ -1,0 +1,13 @@
+package com.ohrmapplicationtestcase;
+
+import com.utility.Excelcommonmethods;
+
+public class LogintpageAndValidation__TESTandFunctinality{
+      
+	
+	public void validationloginpagetest()
+	{
+		Excelfile=new ExcelCommonMethods(excelfileinputpath,excelfileoutputpath,sheetname);
+		
+	}
+}

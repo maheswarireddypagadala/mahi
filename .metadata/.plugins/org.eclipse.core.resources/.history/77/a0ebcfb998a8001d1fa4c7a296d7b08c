@@ -1,0 +1,13 @@
+package com.utility;
+
+public class Orangehrmproperties {
+ 
+	
+	FileInputStream OHRmApplicationPropertiesfile=new FileInputStream("C:\\Users\\makke\\OneDrive\\Desktop\\krishnaveni\\OrangeHRMApplication\\src\\main\\java\\com\\config\\OHRMApplicationproperties");
+
+	Properties properties=new Properties();
+
+	properties.load(OHRmApplicationPropertiesfile);
+
+	return properties;
+}

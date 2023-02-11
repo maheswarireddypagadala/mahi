@@ -1,0 +1,40 @@
+package browserautomation;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Numberoflinksinsrtc {
+
+	public static void main(String[] args) {
+		//https://www.tsrtconline.in/oprs-web/
+		WebDriver driver;
+		String applicationurl="https://www.tsrtconline.in/oprs-web/";
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\myfirstprgm\\browserdrivefiles\\chromedriver.exe");
+		driver=new  ChromeDriver();
+		driver.get(applicationurl);
+		/*<a class="selectedtabcopy" href="/oprs-web/guest/home.do?h=1" target="_top" title="Home">
+		Home</a>
+		
+		<a class="tabcopy" href="/oprs-web/ticket/waitlist.do" target="_top" title="Enquiry">Enquiry</a>
+		
+		commom property among the links of the webpage is --an anchor tag
+		
+		*/
+		By linktagsl=By.tagName("a");
+		List<WebElement>tsrtchomepagelinks=driver.findElements(linktagsl);
+		int tstrc_homepagelinks_count=tsrtchomepagelinks.size();
+		System.out.println("tstrchomepagelinkscount :"+ tstrc_homepagelinks_count);
+		
+		for(int index=0;index<tsrtchomepagelinks.size();index++)
+		{
+			String linkname=tsrtchomepagelinks.get(index).getText();
+			System.out.println(index +" "+ linkname);
+		}
+
+	}
+
+}

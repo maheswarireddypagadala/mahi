@@ -1,0 +1,89 @@
+package browserautomation;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Headerblockelementurlvalidation {
+	WebDriver driver;
+	String applicationurl="https://www.tsrtconline.in/oprs-web";
+	System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\myfirstprgm\\browserdrivefiles\\chromedriver.exe");
+	driver=new  ChromeDriver();
+	driver.get(applicationurl);
+	
+	//maximize the browser
+	//driver.manage().window().maximize();
+	
+	//identify the header block tsrtc application inspect it properties--<div class="menu">
+	
+	 By Tsrtc_HeaderblockL=By.className("menu-wrap");
+	 WebElement tsrtc_Headerblock=driver.findElement(Tsrtc_HeaderblockL);
+	 
+/*<a class="selectedtabcopy" href="/oprs-web/guest/home.do?h=1" target="_top" title="Home">
+	Home</a>
+	
+	<a class="tabcopy" href="/oprs-web/ticket/waitlist.do" target="_top" title="Enquiry">Enquiry</a>*/
+	
+	//commom property among the links of the webpage is --an anchor tag
+	//type element in the header blocker are---links
+	 
+	 driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+	 
+	 By headerblockElementLocator=By.tagName("a");
+	 List<WebElement>headerblocklinks=tsrtc_Headerblock.findElements(headerblockElementLocator);
+	 
+	 int headerblocklinks_count=headerblocklinks.size();
+	 System.out.println("headerblocklinks_count :" +headerblocklinks_count);
+	//getting the element names of header block 
+	 for(int index=0;index<headerblocklinks_count;index++)
+	 {
+		 String headerblock_linkname=headerblocklinks.get(index).getText();
+		 System.out.println(index + " "+ headerblock_linkname);
+		 
+		 String expected_headerblockcurrentelementurl=headerblocklinks.get(index).getAttribute("href");
+		   System.out.println("expected_headerblockurl :" +expected_headerblockcurrentelementurl);
+		 
+		 //performing the click operation
+		  headerblocklinks.get(index).click();
+		 
+		 //getting title of current element
+		 System.out.println(driver.getTitle());
+		 
+
+		 //getting currenturl of currentelement
+		 String actual_headerblockcurrentelementurl=driver.getCurrentUrl();
+		   System.out.println("actual headerblockcurrentelementurl :"+actual_headerblockcurrentelementurl);
+		
+		 if(actual_headerblockcurrentelementurl.equals(expected_headerblockcurrentelementurl))
+		 {
+			 System.out.println("successfully navigated to link webpage --pass");
+			 
+		 }else { 
+			 System.out.println("fails to  navigated to link webpage--fail");
+		 }
+		 
+	     /*since the driver focus is moved to nextpage _re-directing 
+		 the driver to the previous page-since the element under test are in previous page*/
+	         driver.navigate().back();
+	    
+	    //it throws an exception as org.openqa.selelium.staleElement reference exception :
+	    //element is not attached to the pagedocument.
+
+	    //when the driver focus is moved to the nextpage the information stored in the ArrayList will be lost/cleared
+	  //once the driver is back to webpage
+	    //identifying the header block again
+	        tsrtc_Headerblock=driver.findElement(Tsrtc_HeaderblockL);
+	    
+	    //getting all the links of the header block again into the arraylist 
+	    //re-creating thr arraylist
+            headerblocklinks=tsrtc_Headerblock.findElements(headerblockElementLocator);
+	 }
+	 
+	 
+	  driver.close();
+ }
+}

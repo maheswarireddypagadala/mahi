@@ -1,0 +1,23 @@
+package browserautomation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class orangehrmlogin {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver;
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\myfirstprgm\\browserdrivefiles\\chromedriver.exe");
+        driver=new ChromeDriver();
+        
+		
+		
+		
+		
+		
+	}
+
+}

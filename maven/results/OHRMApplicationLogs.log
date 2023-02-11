@@ -1,0 +1,51 @@
+[main] INFO com.utility.Log4j -  username entered 
+[main] INFO com.utility.Log4j - paaword entered 
+[main] INFO com.utility.Log4j -   click operation done
+[main] INFO com.utility.Log4j -  username entered 
+[main] INFO com.utility.Log4j - paaword entered 
+[main] INFO com.utility.Log4j -   click operation done
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j - successfully navigated to ohrm loginpage---pass
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j - successfully navigated to ohrm loginpage---pass
+[main] INFO com.utility.Log4j - successfully navigated to ohrm loginpage---pass
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j - successfully navigated to ohrm loginpage---pass
+[main] INFO com.utility.Log4j - successfully navigated to ohrm loginpage---pass
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j - expected_loginpanel getted data
+[main] INFO com.utility.Log4j - actual_loginpanel---text
+[main] INFO com.utility.Log4j - successfully navigated to ohrm loginpage---pass
+[main] INFO com.utility.Log4j - expected_loginpanel getted data
+[main] INFO com.utility.Log4j - actual_loginpanel---text
+[main] INFO com.utility.Log4j - successfully navigated to ohrm loginpage---pass
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j - expected_loginpanel getted data
+[main] INFO com.utility.Log4j - actual_loginpanel---text
+[main] INFO com.utility.Log4j - successfully navigated to ohrm loginpage---pass
+[main] INFO com.utility.Log4j - expected_loginpanel getted data
+[main] INFO com.utility.Log4j - actual_loginpanel---text
+[main] INFO com.utility.Log4j - successfully navigated to ohrm loginpage---pass
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j -  
+[main] INFO com.utility.Log4j - expected_loginpanel getted data
+[main] INFO com.utility.Log4j - actual_loginpanel---text
+[main] INFO com.utility.Log4j - successfully navigated to ohrm loginpage---pass
+[main] INFO com.utility.Log4j - expected_loginpanel getted data
+[main] INFO com.utility.Log4j - actual_loginpanel---text
+[main] INFO com.utility.Log4j - successfully navigated to ohrm loginpage---pass
+[main] INFO com.utility.Log4j -  screenshot captured
+[main] INFO com.utility.Log4j -  screenshot captured

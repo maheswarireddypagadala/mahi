@@ -1,0 +1,10 @@
+package browserautomation;
+
+public class facebook {
+
+	public static void main(String[] args) {
+	 System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\myfirstprgm\\browserdrivefiles\\chromedriver.exe");
+
+	}
+
+}

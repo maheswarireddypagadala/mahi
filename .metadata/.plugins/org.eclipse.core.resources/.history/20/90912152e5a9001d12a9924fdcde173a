@@ -1,0 +1,55 @@
+package com.stepdefination;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class OrangeHRMApplicationTest {
+	
+	WebDriver driver;
+	String applicationurladdress="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/auth/login";
+	
+     @Given("^user should open chrome browser in system$")
+	public void user_should_open_chrome_browser_in_system() {
+    	 
+    	 System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\cucumber\\browserdriver\\chromedriver.exe");
+	     driver=new ChromeDriver();
+	     driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+
+		}
+
+	@When("^user enter orange hrm application url address$")
+	public void user_enter_orange_hrm_application_url_address() {
+	   
+		
+	     driver.get(applicationurladdress);
+		
+	}
+
+	@Then("^user should be navigated to orange hrm application$")
+	public void user_should_be_navigated_to_orange_hrm_application()  {
+		
+		
+		
+		
+		
+	
+		
+	    
+	}
+
+	@Then("^user should be close the range hrm application and browser$")
+	public void user_should_be_close_the_range_hrm_application_and_browser() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+
+}

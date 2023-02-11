@@ -1,0 +1,24 @@
+package com.utility;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+import com.gargoylesoftware.htmlunit.javascript.host.file.File;
+
+public class Screenshots {
+
+	public static void takescreenshot(WebDriver driver,String imageName) 
+
+	{
+
+	TakesScreenshot takesscreenshot=(TakesScreenshot)driver;
+
+	File errorscreenshot=takesscreenshot.getScreenshotAs(OutputType.FILE);
+
+	FileUtils.copyFile(errorscreenshot,new File("./orangeHrmApplicationerrorscreeshots/"+imageName+".png"));
+
+	}
+	
+}

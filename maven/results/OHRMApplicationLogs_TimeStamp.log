@@ -1,0 +1,51 @@
+2023-02-10 17:31:44,515 - com.utility.Log4j -INFO -  username entered 
+2023-02-10 17:31:44,601 - com.utility.Log4j -INFO - paaword entered 
+2023-02-10 17:31:47,175 - com.utility.Log4j -INFO -   click operation done
+2023-02-10 17:39:53,878 - com.utility.Log4j -INFO -  username entered 
+2023-02-10 17:39:54,015 - com.utility.Log4j -INFO - paaword entered 
+2023-02-10 17:39:56,748 - com.utility.Log4j -INFO -   click operation done
+2023-02-11 10:48:17,843 - com.utility.Log4j -INFO -  
+2023-02-11 10:48:17,870 - com.utility.Log4j -INFO -  
+2023-02-11 10:51:30,808 - com.utility.Log4j -INFO -  
+2023-02-11 10:51:31,501 - com.utility.Log4j -INFO -  
+2023-02-11 10:55:56,260 - com.utility.Log4j -INFO -  
+2023-02-11 10:55:56,511 - com.utility.Log4j -INFO -  
+2023-02-11 10:57:37,829 - com.utility.Log4j -INFO -  
+2023-02-11 10:57:38,405 - com.utility.Log4j -INFO - successfully navigated to ohrm loginpage---pass
+2023-02-11 10:59:25,745 - com.utility.Log4j -INFO -  
+2023-02-11 10:59:46,700 - com.utility.Log4j -INFO -  
+2023-02-11 10:59:46,920 - com.utility.Log4j -INFO -  
+2023-02-11 11:03:22,714 - com.utility.Log4j -INFO -  
+2023-02-11 11:03:22,983 - com.utility.Log4j -INFO -  
+2023-02-11 11:03:23,608 - com.utility.Log4j -INFO - successfully navigated to ohrm loginpage---pass
+2023-02-11 11:03:23,827 - com.utility.Log4j -INFO - successfully navigated to ohrm loginpage---pass
+2023-02-11 11:04:35,010 - com.utility.Log4j -INFO -  
+2023-02-11 11:04:35,024 - com.utility.Log4j -INFO -  
+2023-02-11 11:04:35,897 - com.utility.Log4j -INFO - successfully navigated to ohrm loginpage---pass
+2023-02-11 11:04:35,901 - com.utility.Log4j -INFO - successfully navigated to ohrm loginpage---pass
+2023-02-11 11:07:10,092 - com.utility.Log4j -INFO -  
+2023-02-11 11:07:10,493 - com.utility.Log4j -INFO -  
+2023-02-11 11:07:10,927 - com.utility.Log4j -INFO - expected_loginpanel getted data
+2023-02-11 11:07:10,956 - com.utility.Log4j -INFO - actual_loginpanel---text
+2023-02-11 11:07:10,967 - com.utility.Log4j -INFO - successfully navigated to ohrm loginpage---pass
+2023-02-11 11:07:11,270 - com.utility.Log4j -INFO - expected_loginpanel getted data
+2023-02-11 11:07:11,302 - com.utility.Log4j -INFO - actual_loginpanel---text
+2023-02-11 11:07:11,309 - com.utility.Log4j -INFO - successfully navigated to ohrm loginpage---pass
+2023-02-11 11:08:38,822 - com.utility.Log4j -INFO -  
+2023-02-11 11:08:39,210 - com.utility.Log4j -INFO -  
+2023-02-11 11:08:39,864 - com.utility.Log4j -INFO - expected_loginpanel getted data
+2023-02-11 11:08:39,903 - com.utility.Log4j -INFO - actual_loginpanel---text
+2023-02-11 11:08:39,910 - com.utility.Log4j -INFO - successfully navigated to ohrm loginpage---pass
+2023-02-11 11:08:40,206 - com.utility.Log4j -INFO - expected_loginpanel getted data
+2023-02-11 11:08:40,233 - com.utility.Log4j -INFO - actual_loginpanel---text
+2023-02-11 11:08:40,239 - com.utility.Log4j -INFO - successfully navigated to ohrm loginpage---pass
+2023-02-11 11:11:07,484 - com.utility.Log4j -INFO -  
+2023-02-11 11:11:07,674 - com.utility.Log4j -INFO -  
+2023-02-11 11:11:08,406 - com.utility.Log4j -INFO - expected_loginpanel getted data
+2023-02-11 11:11:08,432 - com.utility.Log4j -INFO - actual_loginpanel---text
+2023-02-11 11:11:08,437 - com.utility.Log4j -INFO - successfully navigated to ohrm loginpage---pass
+2023-02-11 11:11:08,496 - com.utility.Log4j -INFO - expected_loginpanel getted data
+2023-02-11 11:11:08,520 - com.utility.Log4j -INFO - actual_loginpanel---text
+2023-02-11 11:11:08,534 - com.utility.Log4j -INFO - successfully navigated to ohrm loginpage---pass
+2023-02-11 11:11:10,172 - com.utility.Log4j -INFO -  screenshot captured
+2023-02-11 11:11:10,545 - com.utility.Log4j -INFO -  screenshot captured

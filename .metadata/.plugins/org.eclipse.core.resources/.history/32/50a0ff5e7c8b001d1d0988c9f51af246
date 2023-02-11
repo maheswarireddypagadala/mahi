@@ -1,0 +1,51 @@
+package browserautomation;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Numberofheaderblockintsrtc {
+
+	public static void main(String[] args) {
+		WebDriver driver;
+		String applicationurl="https://www.tsrtconline.in/oprs-web/";
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\myfirstprgm\\browserdrivefiles\\chromedriver.exe");
+		driver=new  ChromeDriver();
+		driver.get(applicationurl);
+		
+		//maximize the browser
+		driver.manage().window().maximize();
+		
+		//identify the header block tsrtc application inspect it properties--<div class="menu">
+		
+		 By Tsrtc_headerblockL=By.className("menu_Wrap");
+		 WebElement TSRTC_headerblock=driver.findElement(Tsrtc_headerblockL);
+		 
+	/*<a class="selectedtabcopy" href="/oprs-web/guest/home.do?h=1" target="_top" title="Home">
+		Home</a>
+		
+		<a class="tabcopy" href="/oprs-web/ticket/waitlist.do" target="_top" title="Enquiry">Enquiry</a>*/
+		
+		//commom property among the links of the webpage is --an anchor tag
+		//type element in the header blocker are---links
+		 driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		 
+		 By headerblockElementLocator=By.tagName("a");
+		 
+		 List<WebElement>headerblocklinks= TSRTC_headerblock.findElements(headerblockElementLocator);
+		 
+		 int headerblocklinks_count=headerblocklinks.size();
+		 System.out.println("headerblocklinks_count :" +headerblocklinks_count);
+		 
+		 for(int index=0;index<headerblocklinks_count;index++)
+		 {
+			 String headerblock_linkname=headerblocklinks.get(index).getText();
+			 System.out.println(index +" " + headerblock_linkname);
+		 }
+	}
+
+}

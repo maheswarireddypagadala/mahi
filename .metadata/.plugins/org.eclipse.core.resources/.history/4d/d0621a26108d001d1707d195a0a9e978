@@ -1,0 +1,30 @@
+package frameDragDrop;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DraggingANDdropping {
+
+	public static void main(String[] args) {
+		WebDriver driver;
+		String applicationurl="https://jqueryui.com/draggable/";
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\myfirstprgm\\browserdrivefiles\\chromedriver.exe");
+		driver=new  ChromeDriver();
+		driver.get(applicationurl);
+		
+		//identify the frame of the webpage
+		//<iframe src="/resources/demos/draggable/default.html" class="demo-frame"></iframe>
+       By jqueryframeloacator=By.className("demo-frame");
+       WebElement jqueryframe=driver.findElement(jqueryframeloacator);
+
+//switiching into page frame of the webpage_because the element under test are inside  the frame
+       driver.switchTo().frame(jqueryframe);
+       
+       //drag me to my target property 
+       
+       
+	}
+
+}

@@ -1,0 +1,32 @@
+package browserautomation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Numberofheaderblockintsrtc {
+
+	public static void main(String[] args) {
+		WebDriver driver;
+		String applicationurl="https://www.tsrtconline.in/oprs-web/";
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\myfirstprgm\\browserdrivefiles\\chromedriver.exe");
+		driver=new  ChromeDriver();
+		driver.get(applicationurl);
+		
+		//maximize the browser
+		driver.manage().window().maximize();
+		
+		//identify the header block tsrtc application inspect it properties
+		     
+		
+		/*<a class="selectedtabcopy" href="/oprs-web/guest/home.do?h=1" target="_top" title="Home">
+		Home</a>
+		
+		<a class="tabcopy" href="/oprs-web/ticket/waitlist.do" target="_top" title="Enquiry">Enquiry</a>
+		
+		commom property among the links of the webpage is --an anchor tag
+		
+		*/
+		
+	}
+
+}

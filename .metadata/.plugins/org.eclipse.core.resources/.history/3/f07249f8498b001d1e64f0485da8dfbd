@@ -1,0 +1,20 @@
+package browserautomation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Numberoflinksinsrtc {
+
+	public static void main(String[] args) {
+		//https://www.tsrtconline.in/oprs-web/
+		WebDriver driver;
+		String applicationurl="https://www.tsrtconline.in/oprs-web/";
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\myfirstprgm\\browserdrivefiles\\chromedriver.exe");
+		driver=new  ChromeDriver();
+		driver.get(applicationurl);
+		
+		
+
+	}
+
+}

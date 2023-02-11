@@ -1,0 +1,64 @@
+package com.ohrmapplicationtestcase;
+
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import com.config.Basetest;
+import com.utility.Excelcommonmethods;
+import com.utility.Log4j;
+import com.utility.Orangehrmproperties;
+import com.utility.Screenshots;
+
+public class LogintpageAndValidation__TESTandFunctinality extends Basetest{
+      
+	
+	Properties property;
+	String excelFileInputPath="C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\maven\\Excelfiles\\LogInTest.xlsx";
+	String excelFileOutputPath="C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\maven\\Excelfiles\\LogInTest.xlsx";
+	String Sheetname="sheet1";
+	
+	
+	excelcommonmethod Excelfile;
+	
+@Test(priority=1,description="ohrm  validating login panel")
+public void validationhomepageloginpanel() {
+	
+	Excelfile=new excelcommonmethod(excelFileInputPath,excelFileOutputPath,Sheetname);
+		
+
+		
+		
+		property =Orangehrmproperties.loadproperty();
+		By loginpageloginpaneltest=By.id(property.getProperty("loginpageHeaderText"));
+		//WebElement 
+	    WebElement loginpanel=driver.findElement(loginpageloginpaneltest);
+	    
+		String expected_loginpanel=Excelfile.getcallvalue(1,0);
+		
+	    String actual_loginpanel=loginpanel.getText();
+	    Excelfile.setcellvalue(1,1,actual_loginpanel);
+	if(actual_loginpanel.equals(expected_loginpanel)) {
+		Log4j.info("successfully navigated to ohrm loginpage---pass");
+		 Excelfile.setcellvalue(1,2,"successfully navigated to ohrm loginpage---pass");
+		 
+	}
+		 
+	else {
+		
+		Log4j.info("failed  to  navigate  ohrm loginpage---pass");
+		 Excelfile.setcellvalue(1,2,"failed to navigate  ohrm loginpage---fail");
+	}
+		
+		
+	Screenshots.takescreenshot(driver,"error to navigate to orangehrm");
+	
+		
+		
+		
+		
+	}
+}

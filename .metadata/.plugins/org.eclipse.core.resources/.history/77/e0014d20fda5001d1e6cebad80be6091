@@ -1,0 +1,117 @@
+package empaddphotograph;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+import com.orangehrm.Basetest;
+
+public class epmPim extends Basetest {
+    
+	@Test(priority=1)
+	public void login(){
+	
+	  By usernamelocator=By.id("txtUsername");
+	  WebElement username=driver.findElement(usernamelocator);
+	  username.sendKeys("maheswari");
+		
+	  By passwordlocator=By.id("txtPassword");
+	  WebElement password=driver.findElement(passwordlocator);
+	  password.sendKeys("Mahesh@1998");
+	  
+	  //id="btnLogin"
+	  By loginlocator=By.id("btnLogin");
+	  WebElement login=driver.findElement(loginlocator);
+	  login.click();
+	}
+	
+	
+	  @Test(priority=2)
+	  public void pim() throws InterruptedException
+	  {
+//<a href="/orangehrm-4.2.0.1/symfony/web/index.php/pim/viewPimModule" id="menu_pim_viewPimModule" class="firstLevelMenu"><b>PIM</b></a>
+	       Thread.sleep(3000);
+
+    By pimlocator=By.id("menu_pim_addEmployee");
+	WebElement hello=driver.findElement(pimlocator);
+	 Actions action=new Actions(driver);
+	 action.moveToElement(hello).build().perform();
+	 
+	 }
+	  
+	  @Test(priority=3)
+	  public void addemp()
+	  {
+		//id="menu_pim_addEmployee"
+			By addemployeelocator=By.id("");
+			WebElement Addemployee=driver.findElement(addemployeelocator);
+		//ddemployee.sendKeys("Add Employee");
+			Addemployee.click();  
+		  
+		  
+	  }
+	  
+	  
+	@Test(priority=4)
+	 public void emplist() throws InterruptedException, IOException {
+		   
+		  
+        By firstnamelocator=By.id("firstName");
+        WebElement firstname=driver.findElement(firstnamelocator);
+        firstname.sendKeys("maheswari");
+        
+        Actions action=new Actions(driver);
+        action.sendKeys(Keys.TAB).build().perform();
+		
+        
+        //automate middlename 
+        action.sendKeys("MiddleNameText").build().perform();
+
+        action.sendKeys(Keys.TAB).build().perform();
+        
+        
+        //automate lastname
+        action.sendKeys("LastNameText").build().perform();
+        
+        //employeeid
+        action.sendKeys(Keys.TAB).build().perform();
+        
+
+        //automating photograph
+        action.sendKeys(Keys.TAB).build().perform();
+        action.sendKeys(Keys.ENTER).build().perform();
+        Thread.sleep(2000);
+        
+        //uploading image to the application photograph
+        java.lang.Runtime.getRuntime().exec("C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\ohrm.testng\\photoautoit\\photo");
+           
+       Thread.sleep(3000);
+       //savebutton
+        //<input type="button", id="btnsave"
+       
+       By savelocator=By.id("btnSave");
+		WebElement save=driver.findElement(savelocator);
+		save.click();
+		
+		//validating the image uploaded
+		By employeephotographaddlocator=By.id("photofile");
+		WebElement employeephotographadd=driver.findElement(employeephotographaddlocator);
+		
+		boolean flag=employeephotographadd.isDisplayed();
+		
+		if(flag) {
+			System.out.println("photo is added successfully-------pass");
+			
+		}
+		else {    
+			 System.out.println("photo is not added successfully---------fail");
+		}
+		
+	
+	  }
+	 
+}

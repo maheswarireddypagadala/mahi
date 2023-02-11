@@ -1,0 +1,67 @@
+package browserautomation;
+
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class browsertesting {
+
+	public static void main(String[] args) {
+		
+		
+		//automatic chrome browser
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\myfirstprgm\\browserdrivefiles\\chromedriver.exe");
+        //ChromeDriver hello=new ChromeDriver();
+         WebDriver driver=new ChromeDriver();
+         driver.get("http:/Bing.com");
+         driver.navigate().to("http://gmail.com");
+         driver.get("http://youtube.com");
+         driver.getTitle();
+         String expected_title="Bing";
+         System.out.println("expected_title: " + expected_title);
+         String actual_title="Bing";
+         System.out.println("actual_title: " + actual_title);
+         if(expected_title.equals(actual_title))
+         {
+        	 System.out.println("same");
+         }
+         else
+         {
+        	 System.out.println("not same");
+         }
+         WebDriver mahi=new ChromeDriver();
+         mahi.get("http:/Google.com");
+         mahi.getTitle();
+         String expected_titles="Google";
+         System.out.println("expected_title: " + expected_titles);
+         String actual_titles="Google";
+         System.out.println("actual_title: " + actual_titles);
+        
+         
+         char charAtindex=actual_titles.charAt(0);
+         System.out.println("charAtindex");
+         
+         if(expected_titles.equals(actual_titles))
+         {
+        	 System.out.println("same");
+         }
+         else
+         {
+        	 System.out.println("not same");
+         }
+         //driver.quit();
+         //driver.close();
+         //hello.get("http://bing.com");
+		    // hello.get("http://facebook.com");
+	        //hello.close();
+	        //hello.quit();
+	     //hello.navigate().to("http://bing.com");
+	     //hello.quit();
+	      //hello.close();
+	    //ChromeDriver mahi=new ChromeDriver();
+	    //mahi.get("http://email.com");
+	    //mahi.get("http://instagram.com");
+	   // mahi.navigate().to("http://google.com");
+	        //C:\Users\ramre\OneDrive\Desktop\myproject12\myfirstprgm\browserdrivefiles\chromedriver.ex
+   }
+}

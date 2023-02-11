@@ -1,0 +1,45 @@
+package com.ohrmapplicationtestcase;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+
+import com.config.Basetest;
+import com.utility.Excelcommonmethods;
+import com.utility.Orangehrmproperties;
+
+public class LogintpageAndValidation__TESTandFunctinality extends Basetest{
+      
+	
+	//Properties property;
+	String excelFileInputPath="C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\maven\\Excelfiles\\LogInTest.xlsx";
+	String excelFileOutputPath="C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\maven\\Excelfiles\\LogInTest.xlsx";
+	String Sheetname="sheet1";
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public void validationloginpagetest()
+	{
+		Excelcommonmethods Excelfile=new Excelcommonmethods(excelFileInputPath,excelFileOutputPath,Sheetname);
+		
+
+		
+		
+		Properties property =Orangehrmproperties.loadproperty();
+		By loginpageloginpaneltest=By.id(property.getProperty("loginpageHeaderText"));
+		webelement loginpanel=driver.findElement(loginpageloginpaneltest);
+		
+		
+		
+		
+		
+	}
+}

@@ -1,0 +1,16 @@
+package com.utility;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+
+public class Orangehrmproperties {
+ 
+	
+	FileInputStream OHRmApplicationPropertiesfile=new FileInputStream("------path of properties--------------");
+
+	Properties properties=new Properties();
+
+	properties.load(----ohrmpropertiesfile);
+
+	return properties;
+}

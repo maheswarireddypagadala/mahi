@@ -1,0 +1,126 @@
+package empaddphotograph;
+
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.orangehrm.Basetest;
+
+public class EmpPim {
+     WebDriver driver;
+     String applicationurladdress="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/auth";
+
+ 	    @Test(priority=1)
+ 		public void  applicationlaunch() throws InterruptedException 
+ 	    {
+ 		   System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\ohrm.testng\\broswer\\browserdriver\\chromedriver.exe");
+ 	         driver=new ChromeDriver();
+ 	         driver.get(applicationurladdress);
+ 	         driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+ 			
+ 			
+ 		
+ 	  By usernamelocator=By.id("txtUsername");
+ 	  WebElement username=driver.findElement(usernamelocator);
+ 	  username.sendKeys("maheswari");
+ 		
+ 	  By passwordlocator=By.id("txtPassword");
+ 	  WebElement password=driver.findElement(passwordlocator);
+ 	  password.sendKeys("Mahesh@1998");
+ 	  
+ 	  //id="btnLogin"
+ 	  By loginlocator=By.id("btnLogin");
+ 	  WebElement login=driver.findElement(loginlocator);
+ 	  login.click();
+ 	  
+ 	 Thread.sleep(3000);
+     By pimlocator=By.xpath("//*[@id=\"menu_pim_viewPimModule\"]");
+		WebElement pimclick=driver.findElement(pimlocator);
+		Actions action=new Actions(driver);
+		action.moveToElement(pimclick).build().perform();
+		
+ 	  
+		//*[@id="menu_pim_viewPimModule"]
+ 	}
+ 	  
+ 	   @Test(priority=2)
+ 	  public void addemp()
+ 	  {
+ 		//id="menu_pim_addEmployee" //<b>Admin</b>menu_admin_viewAdminModule  menu_admin_UserManagement
+ 			By addemployeelocator=By.id("menu_pim_addEmployee");
+ 			WebElement Addemployee=driver.findElement(addemployeelocator);
+ 		//ddemployee.sendKeys("Add Employee");
+ 			Addemployee.click();  
+ 		  
+ 		  
+ 	  }
+ 	  
+ 	  
+ 	@Test(priority=3)
+ 	 public void emplist() throws InterruptedException, IOException {
+ 		   
+ 		  
+         By firstnamelocator=By.id("firstName");
+         WebElement firstname=driver.findElement(firstnamelocator);
+         firstname.sendKeys("maheswari");
+         
+         Actions action=new Actions(driver);
+         action.sendKeys(Keys.TAB).build().perform();
+ 		
+         
+         //automate middlename 
+         action.sendKeys("MiddleNameText").build().perform();
+
+         action.sendKeys(Keys.TAB).build().perform();
+         
+         
+         //automate lastname
+         action.sendKeys("LastNameText").build().perform();
+         
+         //employeeid
+         action.sendKeys(Keys.TAB).build().perform();
+         
+
+         //automating photograph
+         action.sendKeys(Keys.TAB).build().perform();
+         action.sendKeys(Keys.ENTER).build().perform();
+         Thread.sleep(2000);
+         
+         //uploading image to the application photograph
+         java.lang.Runtime.getRuntime().exec(".//ohrm.testng/photoautoit/addphopto.exe");
+            
+        Thread.sleep(3000);
+        //savebutton
+         //<input type="button", id="btnsave"
+        
+        By savelocator=By.id("btnSave");
+ 		WebElement save=driver.findElement(savelocator);
+ 		save.click();
+ 		
+ 		//validating the image uploaded
+ 		By employeephotographaddlocator=By.id("photofile");
+ 		WebElement employeephotographadd=driver.findElement(employeephotographaddlocator);
+ 		
+ 		boolean flag=employeephotographadd.isDisplayed();
+ 		
+ 		if(flag) {
+ 			System.out.println("photo is added successfully-------pass");
+ 			
+ 		}
+ 		else {    
+ 			 System.out.println("photo is not added successfully---------fail");
+ 		}
+ 		
+ 	
+ 	  }
+}
+

@@ -1,0 +1,31 @@
+package browserautomation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class facebook {
+
+	public static void main(String[] args) {
+		
+	 WebDriver driver;
+	 String appicationurl="http://facebook.com";
+	 System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\myfirstprgm\\browserdrivefiles\\chromedriver.exe");
+     driver=new ChromeDriver();
+     driver.get(appicationurl);
+     
+     String expected_facebookwebpagetitle="facebook";
+     System.out.println("expected_facebookwebpagetitle :" + expected_facebookwebpagetitle);
+     
+     String actual_facebookwebpagetitle=driver.getTitle();
+     System.out.println("expected_facebookwebpagetitle :"+ actual_facebookwebpagetitle);
+     
+     if(actual_facebookwebpagetitle.equals(expected_facebookwebpagetitle))
+     {
+    	 System.out.println("facebookwebpagetitle is same ");
+     }else {
+    	 
+    	 System.out.println("facebookwebpagetitle is not same");
+     }
+	}
+
+}

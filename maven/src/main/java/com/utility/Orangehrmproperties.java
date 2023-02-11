@@ -1,0 +1,29 @@
+package com.utility;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class Orangehrmproperties {
+  public static Properties loadproperty() throws IOException {
+	
+	FileInputStream OHRmApplicationPropertiesfile=new FileInputStream("C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\maven\\src\\main\\java\\com\\config\\orangehrm.properties");
+
+	Properties properties=new Properties();
+	properties.load(OHRmApplicationPropertiesfile);
+	
+    
+
+
+	return properties;
+	
+}
+	
+}
+/*FileInputStream OHRmApplicationPropertiesfile=new FileInputStream("C:\\Users\\makke\\OneDrive\\Desktop\\krishnaveni\\OrangeHRMApplication\\src\\main\\java\\com\\config\\OHRMApplicationproperties");
+
+Properties properties=new Properties();
+
+properties.load(OHRmApplicationPropertiesfile);
+
+return properties;*/

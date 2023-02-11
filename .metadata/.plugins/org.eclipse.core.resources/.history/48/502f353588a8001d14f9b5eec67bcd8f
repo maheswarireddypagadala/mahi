@@ -1,0 +1,56 @@
+package empaddphotograph;
+
+
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.orangehrm.Basetest;
+
+public class EmpPim {
+     WebDriver driver;
+     String applicationurladdress="http://127.0.0.1/orangehrm-4.2.0.1/symfony/web/index.php/auth";
+
+ 	    @Test(priority=1)
+ 		public void  applicationlaunch() throws InterruptedException 
+ 	    {
+ 		   System.setProperty("webdriver.chrome.driver","C:\\Users\\ramre\\OneDrive\\Desktop\\myproject12\\ohrm.testng\\broswer\\chromedriver.exe");
+ 	         driver=new ChromeDriver();
+ 	         driver.get(applicationurladdress);
+ 	         driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+ 			
+ 			
+ 		
+ 	  By usernamelocator=By.id("txtUsername");
+ 	  WebElement username=driver.findElement(usernamelocator);
+ 	  username.sendKeys("maheswari");
+ 		
+ 	  By passwordlocator=By.id("txtPassword");
+ 	  WebElement password=driver.findElement(passwordlocator);
+ 	  password.sendKeys("Mahesh@1998");
+ 	  
+ 	  //id="btnLogin"
+ 	  By loginlocator=By.id("btnLogin");
+ 	  WebElement login=driver.findElement(loginlocator);
+ 	  login.click();
+ 	  
+ 	 Thread.sleep(3000);
+     By pimlocator=By.xpath("//*[@id=\"menu_pim_viewPimModule\"]");
+		WebElement pimclick=driver.findElement(pimlocator);
+		Actions action=new Actions(driver);
+		action.moveToElement(pimclick).build().perform();
+		
+ 	  
+		//*[@id="menu_pim_viewPimModule"]
+ 	}
+ 	  
+}
+
